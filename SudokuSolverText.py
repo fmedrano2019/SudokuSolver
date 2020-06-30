@@ -5,6 +5,7 @@ import numpy as np
 def print_board(matrix):
     """
     Prints the Sudoku board
+
     :param matrix: a 2D array for ints
     :return: None
     """
@@ -25,6 +26,7 @@ def print_board(matrix):
 def generate_numbers(matrix):
     """
     Generates random numbers to fill the board
+
     :param matrix: a 2D array of ints; board to be filled
     :return: None
     """
@@ -45,6 +47,7 @@ def generate_numbers(matrix):
 def add_number(row, col, num, matrix):
     """
     Adds the parameter number to the board
+
     :param row: row to be checked
     :param col: column to be checked
     :param num: number to be added
@@ -72,6 +75,7 @@ def add_number(row, col, num, matrix):
 def find_empty(matrix):
     """
     Finds an empty space in the board
+
     :param matrix: a 2D array of ints
     :return: the row and column of the empty space, None if there is no empty space
     """
@@ -87,6 +91,7 @@ def search_box(start_row, start_col, num, matrix):
     """
     Helper method of add_number()
     Searches the box to check if the parameter number is already there
+
     :param start_row: starting row of the box
     :param start_col: starting column of the box
     :param num: number being checked for
@@ -109,6 +114,7 @@ def search_box(start_row, start_col, num, matrix):
 def search_row_peers(row, num, matrix):
     """
     Searches the row to check if the parameter number is already there
+
     :param row: row to be iterated through
     :param num: number to be checked for
     :param matrix: a 2D array of ints
@@ -124,6 +130,7 @@ def search_row_peers(row, num, matrix):
 def search_col_peers(col, num, matrix):
     """
     Searches the column to check if the parameter number is already there
+
     :param col: column to be iterated through
     :param num: number to be checked for
     :param matrix: a 2D array of ints
@@ -138,9 +145,10 @@ def search_col_peers(col, num, matrix):
 
 def solve(matrix):
     """
-    Solves the board
+    Solves the board through recursive backtracking
+
     :param matrix: a 2D array of ints; board to be solved
-    :return:
+    :return: True if the solution is valid, False if otherwise
     """
 
     space = find_empty(matrix)
@@ -159,11 +167,16 @@ def solve(matrix):
     return False
 
 
+# Initializing the board
 board = np.zeros((9, 9), dtype=int)
 print_board(board)
 print()
+
+# Generates the numbers on the board
 generate_numbers(board)
 print_board(board)
 print()
+
+# Solves the board
 solve(board)
 print_board(board)
