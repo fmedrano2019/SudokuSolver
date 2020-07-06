@@ -1,2 +1,2 @@
 # SudokuSolver
-A program that generates its own Sudoku puzzle and solves it.
+A program that solves a Sudoku puzzle using recursive backtracking.
