@@ -1,5 +1,5 @@
 # SudokuSolver
-A program that solves a Sudoku puzzle using recursive backtracking.
+A set of programs that solve a Sudoku puzzle using recursive backtracking.
 
 ## SudokuSolverText.py
 A text-based Sudoku solver. The program generates its own puzzle to which it will try and solve.
